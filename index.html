@@ -1,18 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Connect Outdoors</title>
+
+    <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Personal CSS -->
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
+
 <body>
-    
-    
-    
-    
+    <nav>
+        <div class="nav-wrapper red">
+            <a href="#!" class="brand-logo center">Connect Outdoors</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="eventLocation" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Location</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="eventType" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Event Type</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea id="eventDate" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Date</label>
+                </div>
+                <div class="input-field col s6">
+                    <textarea id="eventTime" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="100" />
+                    </p>
+                </div>
+            </div>
+            <button class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action">
+                <i class="material-icons right">search</i>
+            </button>
+        </form>
+    </div>
+
+
+
+    <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Personal JS -->
     <script src="./assets/script/script.js"></script>
 </body>
+
 </html>
