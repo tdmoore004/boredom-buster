@@ -12,7 +12,7 @@ $('#searchBtn').on('click', function(event) {
         method: "GET"
     }).then(function(response) {
         console.log(response);
-        
+      
         var activityName = response.activity
         var queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + activityName;
         
@@ -31,5 +31,3 @@ $('#searchBtn').on('click', function(event) {
     })
 
 })
-
-
