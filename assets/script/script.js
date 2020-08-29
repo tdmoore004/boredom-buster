@@ -28,11 +28,11 @@ function cost() {
         if (activityCost[0].selected == true) {
             return "";
         } else if (type() == "" && activityCost[i].selected == true) {
-            console.log(activityCost[i].text)
-            const costVal = "?cost=" + activityCost[i].textContent;
+            console.log(activityCost[i].value)
+            const costVal = "?minprice=0&maxprice=" + activityCost[i].value;
             return costVal;
         } else if (activityCost[i].selected == true) {
-            const costVal = "&cost=" + activityCost[i].text.toLowerCase();
+            const costVal = "&minprice=0&maxprice=" + activityCost[i].value;
             return costVal;
         }
     }
@@ -42,7 +42,7 @@ function participants() {
     for (let i = 0; i < activityParticipants.length; i++) {
         if (activityParticipants[0].selected == true) {
             return "";
-        } else if (type() == "" && cost() == "" && activityCost[i].selected == true) {
+        } else if (type() == "" && cost() == "" && activityParticipants[i].selected == true) {
             const costVal = "?participants=" + activityParticipants[i].text.toLowerCase();
             return costVal;
         }else if (activityParticipants[i].selected == true) {
