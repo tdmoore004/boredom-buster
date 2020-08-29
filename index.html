@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/fc4c13e3cb.js" crossorigin="anonymous" SameSite="Secure"></script>
+    
     <!-- Personal CSS -->
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
@@ -23,50 +26,60 @@
 
     <div class="container">
         <form class="col s12">
-            <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Activity you are interested in...</option>
-                    <option value="1">Education</option>
-                    <option value="2">Recreation</option>
-                    <option value="3">Social</option>
-                    <option value="1">DIY</option>
-                    <option value="2">Charity</option>
-                    <option value="3">Cooking</option>
-                    <option value="1">Relaxation</option>
-                    <option value="2">Music</option>
-                    <option value="3">Busywork</option>
-                </select>
-                <label>Type of Activity</label>
-            </div>
             <div class="row">
-                <label>Number of Participants</label>
                 <div class="input-field col s12">
-                    <p class="range-field">
-                        <input type="range" id="test5" min="1" max="4" />
-                    </p>
-                    <span class="helper-text" data-error="wrong" data-success="right">Selecting number of participants with activity type may limit results.</span>
+                    <select>
+                        <option value="" disabled selected>Activity you are interested in...</option>
+                        <option value="1">Education</option>
+                        <option value="2">Recreation</option>
+                        <option value="3">Social</option>
+                        <option value="1">DIY</option>
+                        <option value="2">Charity</option>
+                        <option value="3">Cooking</option>
+                        <option value="1">Relaxation</option>
+                        <option value="2">Music</option>
+                        <option value="3">Busywork</option>
+                    </select>
+                    <label>Type of Activity</label>
+                </div>
+                <div class="col s12">
+                    <span class="helper-text" data-error="wrong" data-success="right">Specifying cost and/or number of
+                        participants with activity type may limit results.</span>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select>
+                        <option value="" disabled selected>Activity Cost...</option>
+                        <option value="1">$</option>
+                        <option value="2">$$</option>
+                        <option value="3">$$$</option>
+                    </select>
+                    <label>Cost of Activity</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select>
+                        <option value="" disabled selected>Number of Participants...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="1">4</option>
+                    </select>
+                    <label>Number of Participants</label>
                 </div>
             </div>
-            <div class="row">
-                <label>Cost</label>
-                <div class="input-field col s12">
-                    <p class="range-field">
-                        <input type="range" id="test5" min="0" max="10" />
-                    </p>
-                    <span class="helper-text" data-error="wrong" data-success="right">Selecting number of participants with activity type may limit results.</span>
-                </div>
-            </div>
-            <button id="searchBtn" class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action">
-                <i class="material-icons right">search</i>
+            <button id="searchBtn" class="btn-large waves-effect waves-light light-blue darken-2"
+                type="submit" name="action">
+                <i class="fas fa-bomb"></i>
+                Bust Your Boredom
             </button>
         </form>
+    </div>
     </div>
 
 
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    
+
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
