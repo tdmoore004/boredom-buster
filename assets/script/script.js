@@ -52,22 +52,29 @@ function participants() {
     }
 }
 
+// Display activity
+function displayActivity(activityResponse) {
+}
 
 //Bored-API call
 $('#searchBtn').on('click', function (event) {
     event.preventDefault();
-
-
+    
+    
     let boredQueryUrl = "https://www.boredapi.com/api/activity" + type() + cost() + participants();
     console.log(boredQueryUrl)
-
-
+    
+    
     $.ajax({
         url: boredQueryUrl,
         method: "GET"
-    }).then(function (response) {
-        console.log(response);
-
+    }).then(function (activityResponse) {
+        console.log(activityResponse);
+        
+        let activityDisplay = $("<h3>");
+        activityDisplay.addClass("light-blue-text darken-2")
+        activityDisplay.text(activityResponse.activity);
+        $("#activity-response").append(activityDisplay);
 
 
 
