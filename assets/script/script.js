@@ -12,7 +12,7 @@ let activityParticipants = document.getElementsByClassName('activityParticipants
 $('#searchBtn').on('click', function (event) {
     event.preventDefault();
     $.ajax({
-        url: "http://www.boredapi.com/api/activity/",
+        url: "https://www.boredapi.com/api/activity/",
         method: "GET"
     }).then(function (response) {
         console.log(response);
