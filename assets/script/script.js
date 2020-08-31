@@ -61,9 +61,11 @@ $(document).ready(function (event) {
         event.preventDefault();
         $('.collapsible').removeClass('hide');
 
+
         let boredQueryUrl = "https://www.boredapi.com/api/activity" + type() + cost() + participants();
         console.log(boredQueryUrl)
-
+        $("#activityResponse").empty();
+        $("#booksListDiv").empty();
 
         $.ajax({
             url: boredQueryUrl,
@@ -72,10 +74,7 @@ $(document).ready(function (event) {
             console.log(activityResponse);
 
             // Display activity to page
-            let activityDisplay = $("<h3>");
-            activityDisplay.addClass("light-blue-text darken-2")
-            activityDisplay.text(activityResponse.activity);
-            $("#activity-response").prepend(activityDisplay);
+            $("#activityResponse").text(activityResponse.activity);
 
             var activityName = activityResponse.activity
             var queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + activityName;
