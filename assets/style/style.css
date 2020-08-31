@@ -21,3 +21,7 @@ button.btn-large.waves-effect.waves-light.light-blue.darken-2 {
 i.fas.fa-bomb {
     margin-right: 4px;
 }
+
+.hide {
+    visibility: hidden;
+}
