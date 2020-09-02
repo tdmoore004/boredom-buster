@@ -161,5 +161,11 @@ $(document).ready(function (event) {
         })
 
     })
+
+    // to-do button adds activity to local storage
+    $('#todoBtn').on('click', function(event) {
+        event.preventDefault();
+        localStorage.setItem('activityName', $("#activityResponse")[0].innerText);
+    })
 });
 
