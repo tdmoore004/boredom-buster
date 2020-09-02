@@ -162,9 +162,22 @@ $(document).ready(function (event) {
 
     // to-do button adds activity to local storage
     $('#todoBtn').on('click', function(event) {
-        M.toast({html: 'Added!'})
         event.preventDefault();
-        localStorage.setItem('activityName', $("#activityResponse")[0].innerText);
+
+        // Added toast to main page
+        M.toast({html: 'Added!'});
+        let activityName = $("#activityResponse")[0].innerText;
+        let activityList = JSON.parse(localStorage.getItem('activityList'));
+        if (activityList) {
+            activityList.unshift(activityName);
+        } else {
+            activityList = [];
+            activityList.unshift(activityName);
+        }
+        localStorage.setItem('activityList', JSON.stringify(activityList));
+        console.log(activityList)
+        
+
     })
 });
 
