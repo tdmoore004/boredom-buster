@@ -109,7 +109,7 @@ $(document).ready(function (event) {
                     relatedBooks.text("Related books:");
 
                     // add text to collapsible-header
-                    let relatedBooksText = $("<h5>")
+                    let relatedBooksText = $("<h4>")
                     relatedBooksText.text(booksResponse.items[i].volumeInfo.title);
 
                     // append collapsible-header to relatedBookInfo
