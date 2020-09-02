@@ -15,10 +15,14 @@ div.col.s12 {
 button.btn-large.waves-effect.waves-light.light-blue.darken-2 {
     padding-right: 18px;
     padding-left: 18px;
-
+    margin-right: 12px;
 }
 
 i.fas.fa-bomb {
+    margin-right: 4px;
+}
+
+i.fas.fa-list-ul {
     margin-right: 4px;
 }
 
