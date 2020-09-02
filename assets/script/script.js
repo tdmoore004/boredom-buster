@@ -116,18 +116,41 @@ $(document).ready(function (event) {
                     relatedBookInfo.append(relatedBooksText);
 
                     // append book info to collapsible
+                    // author name
                     let authorTag = $("<p>");
                     authorTag.text("Author: " + booksResponse.items[i].volumeInfo.authors);
                     relatedBookInfo.append(authorTag);
+
+                    // description
                     let descriptionTag = $("<p>");
                     descriptionTag.text("Description: " + booksResponse.items[i].volumeInfo.description);
                     relatedBookInfo.append(descriptionTag);
+                    descriptionTag.addClass('show-read-more');
                     let buyLinkTab = $("<a>");
+
+                    // link
                     buyLinkTab.attr("href", booksResponse.items[i].volumeInfo.infoLink);
                     buyLinkTab.text("Buy Book Link");
                     buyLinkTab.attr("target", "blank")
                     relatedBookInfo.append(buyLinkTab);
                 }
+
+                // show "read more" function for book description
+                var maxLength = 300;
+                    $(".show-read-more").each(function(i){
+                        var descriptionText = "Description: " + booksResponse.items[i].volumeInfo.description;
+                        if($.trim(descriptionText).length > maxLength){
+                            var shortDescriptionText = descriptionText.substring(0, maxLength);
+                            var removedStr = descriptionText.substring(maxLength, $.trim(descriptionText).length);
+                            $(this).empty().html(shortDescriptionText);
+                            $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+                            $(this).append('<span class="more-text">' + removedStr + '</span>');
+                        }
+                    });
+                    $(".read-more").click(function(){
+                        $(this).siblings(".more-text").contents().unwrap();
+                        $(this).remove();
+                    });
 
             }).catch(function (error) {
                 console.log(error);

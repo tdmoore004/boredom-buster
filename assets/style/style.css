@@ -25,3 +25,7 @@ i.fas.fa-bomb {
 .hide {
     visibility: hidden;
 }
+
+.show-read-more .more-text{
+    display: none;
+}
