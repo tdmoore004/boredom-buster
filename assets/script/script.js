@@ -53,8 +53,6 @@ $(document).ready(function (event) {
     }
 
     // Display activity
-    function displayActivity(activityResponse) {
-    }
 
     //Bored-API call
     $('#searchBtn').on('click', function (event) {
