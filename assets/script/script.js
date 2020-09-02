@@ -101,7 +101,7 @@ $(document).ready(function (event) {
 
 
 
-                for (let i = 0; i < 3; i++) {
+                for (let i = 0; i < 5; i++) {
                     // create collapsible-header div
                     let relatedBooks = $("<div>");
                     // relatedBooks.addClass("collapsible-header");
