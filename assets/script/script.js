@@ -88,12 +88,12 @@ $(document).ready(function (event) {
 
                 // Display books to page
                 let booksList = $("<ul>")
-                booksList.addClass("collapsible");
+                // booksList.addClass("collapsible");
 
                 let relatedBookInfo = $("<li>");
 
                 let relatedBooksList = $("<div>")
-                relatedBooksList.addClass("collapsible-body");
+                // relatedBooksList.addClass("collapsible-body");
 
                 $("#booksListDiv").append(booksList); // <ul>
                 booksList.append(relatedBookInfo); // <li>
@@ -104,15 +104,29 @@ $(document).ready(function (event) {
                 for (let i = 0; i < 3; i++) {
                     // create collapsible-header div
                     let relatedBooks = $("<div>");
-                    relatedBooks.addClass("collapsible-header");
+                    // relatedBooks.addClass("collapsible-header");
                     relatedBooks.attr("tabindex", "0");
                     relatedBooks.text("Related books:");
 
                     // add text to collapsible-header
-                    let relatedBooksText = relatedBooks.text(booksResponse.items[i].volumeInfo.title);
+                    let relatedBooksText = $("<h5>")
+                    relatedBooksText.text(booksResponse.items[i].volumeInfo.title);
 
                     // append collapsible-header to relatedBookInfo
                     relatedBookInfo.append(relatedBooksText);
+
+                    // append book info to collapsible
+                    let authorTag = $("<p>");
+                    authorTag.text("Author: " + booksResponse.items[i].volumeInfo.authors);
+                    relatedBookInfo.append(authorTag);
+                    let descriptionTag = $("<p>");
+                    descriptionTag.text("Description: " + booksResponse.items[i].volumeInfo.description);
+                    relatedBookInfo.append(descriptionTag);
+                    let buyLinkTab = $("<a>");
+                    buyLinkTab.attr("href", booksResponse.items[i].volumeInfo.infoLink);
+                    buyLinkTab.text("Buy Book Link");
+                    buyLinkTab.attr("target", "blank")
+                    relatedBookInfo.append(buyLinkTab);
                 }
 
             }).catch(function (error) {
