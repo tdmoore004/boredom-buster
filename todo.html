@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>To Do</title>
-    
-        <!-- Materialize CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/fc4c13e3cb.js" crossorigin="anonymous" SameSite="Secure"></script>
-    
-        <!-- Personal CSS -->
-        <link rel="stylesheet" href="./assets/style/style.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/fc4c13e3cb.js" crossorigin="anonymous" SameSite="Secure"></script>
+
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
 <body>
     <!-- NAVBAR -->
     <nav>
@@ -27,10 +29,24 @@
         </div>
     </nav>
 
+    <!-- ACTIVITY LIST -->
+    <div class="container">
+        <form class="col s12">
+            <h3 class="light-blue-text darken-2">To Do List</h1>
+            <div class="row">
+                <ul id="activityList" class="collection">
+                    <li class="collection-item">Activity</li>
+                    <li class="collection-item">Activity</li>
+                    <li class="collection-item">Activity</li>
+                    <li class="collection-item">Activity</li>
+                </ul>
+            </div>
+        </form>
+    </div>
 
-    
-    
-    
+
+
+
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -40,4 +56,5 @@
     <!-- Personal JS -->
     <script src="./assets/script/todo.js"></script>
 </body>
+
 </html>
