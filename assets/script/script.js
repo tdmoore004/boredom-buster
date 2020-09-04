@@ -58,7 +58,7 @@ $(document).ready(function (event) {
     //Bored-API call
     $('#searchBtn').on('click', function (event) {
         event.preventDefault();
-        $('.collapsible').removeClass('hide');
+        
 
 
         let boredQueryUrl = "https://www.boredapi.com/api/activity" + type() + cost() + participants();
@@ -71,9 +71,14 @@ $(document).ready(function (event) {
             method: "GET"
         }).then(function (activityResponse) {
             console.log(activityResponse);
-
+            // If no activity is found, display a message
+            if (activityResponse.error) {
+                $("#activityResponse").text("You're not as bored as you think you are, try being less specific.");
+                return;
+            }
             // Display activity to page
             $("#activityResponse").text(activityResponse.activity);
+            $('.collapsible').removeClass('hide');
 
             var activityName = activityResponse.activity
             var queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + activityName;
