@@ -171,19 +171,24 @@ $(document).ready(function (event) {
         event.preventDefault();
 
         // Added toast to main page
-        M.toast({html: 'Added!'});
-        let activityName = $("#activityResponse")[0].innerText;
-        let activityList = JSON.parse(localStorage.getItem('activityList'));
-        if (activityList) {
-            activityList.unshift(activityName);
+        console.log($('#activityResponse'))
+        if ($('#activityResponse')[0].textContent === "") {
+            M.toast({html: 'No activity to add'});
+            return;
         } else {
-            activityList = [];
-            activityList.unshift(activityName);
+            M.toast({html: 'Added!'});
+            let activityName = $("#activityResponse")[0].innerText;
+            let activityList = JSON.parse(localStorage.getItem('activityList'));
+            if (activityList) {
+                activityList.unshift(activityName);
+            } else {
+                activityList = [];
+                activityList.unshift(activityName);
+            }
+            localStorage.setItem('activityList', JSON.stringify(activityList));
+            console.log(activityList)
+            
         }
-        localStorage.setItem('activityList', JSON.stringify(activityList));
-        console.log(activityList)
-        
-
     })
 });
 
