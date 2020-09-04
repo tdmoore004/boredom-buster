@@ -33,3 +33,8 @@ i.fas.fa-list-ul {
 .show-read-more .more-text{
     display: none;
 }
+
+li.activity-list-item {
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+}
