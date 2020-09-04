@@ -22,6 +22,7 @@
     <nav>
         <div class="nav-wrapper light-blue darken-2">
             <a href="#!" class="brand-logo center">Boredom Buster</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
                 <li><a href="index.html">New Activity</a></li>
                 <li><a href="todo.html">To Do</a></li>
@@ -29,18 +30,23 @@
         </div>
     </nav>
 
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">New Activity</a></li>
+        <li><a href="todo.html">To Do</a></li>
+    </ul>
+
     <!-- ACTIVITY LIST -->
     <div class="container">
         <form class="col s12">
             <h3 class="light-blue-text darken-2">To Do List</h1>
-            <div class="row">
-                <ul id="activityList" class="collection">
-                    <!-- <li class="collection-item">Activity</li>
+                <div class="row">
+                    <ul id="activityList" class="collection">
+                        <!-- <li class="collection-item">Activity</li>
                     <li class="collection-item">Activity</li>
                     <li class="collection-item">Activity</li>
                     <li class="collection-item">Activity</li> -->
-                </ul>
-            </div>
+                    </ul>
+                </div>
         </form>
     </div>
 

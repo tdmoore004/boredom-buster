@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
 function displayList () {
 $("#activityList").empty();
 
@@ -20,8 +24,7 @@ for (let i = 0; i < activityListDisplay.length; i++) {
     activityNameEl.append(completedBtn);
 
     let completedBtnSymbol = $('<i>');
-    completedBtnSymbol.addClass('material-icons blue-text text-darken-2');
-    completedBtnSymbol.text('check_box')
+    completedBtnSymbol.addClass('far fa-trash-alt blue-text text-darken-2');
     completedBtn.append(completedBtnSymbol);
 
     $('#activityList').append(activityListEl);

@@ -2,6 +2,7 @@
 $(document).ready(function (event) {
     $('select').formSelect();
     $('.collapsible').collapsible();
+    $('.sidenav').sidenav();
 
     // global DOM elements
     let activityType = document.getElementsByClassName('activityType');
