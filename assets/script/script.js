@@ -14,7 +14,6 @@ $(document).ready(function (event) {
     // activity Type
     function type() {
         for (let i = 0; i < activityType.length; i++) {
-            // console.log(activityType)
             if (activityType[0].selected == true) {
                 return "";
             } else if (activityType[i].selected == true) {
@@ -29,7 +28,6 @@ $(document).ready(function (event) {
             if (activityCost[0].selected == true) {
                 return "";
             } else if (type() == "" && activityCost[i].selected == true) {
-                console.log(activityCost[i].value)
                 const costVal = "?minprice=0&maxprice=" + activityCost[i].value;
                 return costVal;
             } else if (activityCost[i].selected == true) {
@@ -62,7 +60,6 @@ $(document).ready(function (event) {
 
 
         let boredQueryUrl = "https://www.boredapi.com/api/activity" + type() + cost() + participants();
-        console.log(boredQueryUrl)
         $("#activityResponse").empty();
         $("#booksListDiv").empty();
 
@@ -70,7 +67,6 @@ $(document).ready(function (event) {
             url: boredQueryUrl,
             method: "GET"
         }).then(function (activityResponse) {
-            console.log(activityResponse);
             // If no activity is found, display a message
             if (activityResponse.error) {
                 $("#activityResponse").text("You're not as bored as you think you are, try being less specific.");
@@ -88,7 +84,6 @@ $(document).ready(function (event) {
                 url: queryURL,
                 method: "GET"
             }).then(function (booksResponse) {
-                console.log(booksResponse);
 
                 // Display books to page
                 let booksList = $("<ul>")
@@ -171,7 +166,6 @@ $(document).ready(function (event) {
         event.preventDefault();
 
         // Added toast to main page
-        console.log($('#activityResponse'))
         if ($('#activityResponse')[0].textContent === "") {
             M.toast({html: 'No activity to add'});
             return;
@@ -186,7 +180,6 @@ $(document).ready(function (event) {
                 activityList.unshift(activityName);
             }
             localStorage.setItem('activityList', JSON.stringify(activityList));
-            console.log(activityList)
             
         }
     })
