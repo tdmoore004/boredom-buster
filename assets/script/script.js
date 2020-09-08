@@ -51,12 +51,10 @@ $(document).ready(function (event) {
         }
     }
 
-    // Display activity
-
     //Bored-API call
     $('#searchBtn').on('click', function (event) {
         event.preventDefault();
-        
+
 
 
         let boredQueryUrl = "https://www.boredapi.com/api/activity" + type() + cost() + participants();
@@ -120,14 +118,14 @@ $(document).ready(function (event) {
                     authorTag.text("Author: " + booksResponse.items[i].volumeInfo.authors);
                     relatedBookInfo.append(authorTag);
 
-                    // description
+                    // Book description
                     let descriptionTag = $("<p>");
                     descriptionTag.text("Description: " + booksResponse.items[i].volumeInfo.description);
                     relatedBookInfo.append(descriptionTag);
                     descriptionTag.addClass('show-read-more');
                     let buyLinkTab = $("<a>");
 
-                    // link
+                    // Book link
                     buyLinkTab.attr("href", booksResponse.items[i].volumeInfo.infoLink);
                     buyLinkTab.text("Buy Book Link");
                     buyLinkTab.attr("target", "blank")
@@ -136,20 +134,20 @@ $(document).ready(function (event) {
 
                 // show "read more" function for book description
                 var maxLength = 300;
-                    $(".show-read-more").each(function(i){
-                        var descriptionText = "Description: " + booksResponse.items[i].volumeInfo.description;
-                        if($.trim(descriptionText).length > maxLength){
-                            var shortDescriptionText = descriptionText.substring(0, maxLength);
-                            var removedStr = descriptionText.substring(maxLength, $.trim(descriptionText).length);
-                            $(this).empty().html(shortDescriptionText);
-                            $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
-                            $(this).append('<span class="more-text">' + removedStr + '</span>');
-                        }
-                    });
-                    $(".read-more").click(function(){
-                        $(this).siblings(".more-text").contents().unwrap();
-                        $(this).remove();
-                    });
+                $(".show-read-more").each(function (i) {
+                    var descriptionText = "Description: " + booksResponse.items[i].volumeInfo.description;
+                    if ($.trim(descriptionText).length > maxLength) {
+                        var shortDescriptionText = descriptionText.substring(0, maxLength);
+                        var removedStr = descriptionText.substring(maxLength, $.trim(descriptionText).length);
+                        $(this).empty().html(shortDescriptionText);
+                        $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+                        $(this).append('<span class="more-text">' + removedStr + '</span>');
+                    }
+                });
+                $(".read-more").click(function () {
+                    $(this).siblings(".more-text").contents().unwrap();
+                    $(this).remove();
+                });
 
             }).catch(function (error) {
                 console.log(error);
@@ -162,25 +160,37 @@ $(document).ready(function (event) {
     })
 
     // to-do button adds activity to local storage
-    $('#todoBtn').on('click', function(event) {
+    $('#todoBtn').on('click', function (event) {
         event.preventDefault();
+        // define the current activity
+        let activityName = $("#activityResponse")[0].innerText;
+        // get activity list from local storage
+        let activityList = JSON.parse(localStorage.getItem('activityList'));
 
-        // Added toast to main page
+        // If an activity is not displayed, do not add
         if ($('#activityResponse')[0].textContent === "") {
-            M.toast({html: 'No activity to add'});
+            M.toast({ html: 'No activity to add' });
             return;
-        } else {
-            M.toast({html: 'Added!'});
-            let activityName = $("#activityResponse")[0].innerText;
-            let activityList = JSON.parse(localStorage.getItem('activityList'));
+        } 
+        // if the activity is already in the todo list, do not add
+        else if (activityList.includes(activityName)) {
+            M.toast({ html: 'Already added' });
+            return;
+        }
+        // if everything looks good, add the current activity to todo list
+        else {
+            M.toast({ html: 'Added!' });
+
             if (activityList) {
                 activityList.unshift(activityName);
             } else {
                 activityList = [];
                 activityList.unshift(activityName);
             }
+
+            // reset localstorage with the new activity
             localStorage.setItem('activityList', JSON.stringify(activityList));
-            
+
         }
     })
 });
