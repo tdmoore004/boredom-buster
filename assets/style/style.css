@@ -1,7 +1,4 @@
-div.container {
-    margin-top: 30px;
-}
-
+/* Navbar */
 a.brand-logo.center {
     min-width: 250px;
 }
@@ -14,7 +11,12 @@ img.boredom-buster-logo {
     img.boredom-buster-logo {
       max-height: 55px;
     }
-  }
+}
+
+/* Activity perameters form */
+div.container {
+    margin-top: 30px;
+}
 
 div.col.s12 {
     margin-bottom: 10px;
@@ -22,6 +24,7 @@ div.col.s12 {
     font-size: 14px;
 }
 
+/* Form buttons */
 button.btn-large.waves-effect.waves-light.light-blue.darken-2 {
     padding-right: 16px;
     padding-left: 16px;
@@ -37,15 +40,17 @@ i.fas.fa-list-ul {
     margin-right: 6px;
 }
 
+/* Added class for hiding related books */
 .hide {
     visibility: hidden;
 }
 
+/* Read more option on long book descriptions */
 .show-read-more .more-text{
     display: none;
 }
 
+/* Activity todo list */
 li.activity-list-item {
     margin-top: 20px;
-    /* margin-bottom: 20px; */
 }
