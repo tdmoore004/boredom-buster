@@ -57,7 +57,7 @@ $('#agree').on('click', function () {
     return;
 });
 
-$('#dissagree').on('click', function () {
+$('#disagree').on('click', function () {
     displayList();
     return;
 });
