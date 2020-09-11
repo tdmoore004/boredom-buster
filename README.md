@@ -20,6 +20,6 @@ Navigate to the To Do page to see your list of activities. Click on the trash ic
 
 ## Credits
 
-Bored API
-Google Books API
-Materialize CDN
+1. Bored API
+2. Google Books API
+3. Materialize CDN
