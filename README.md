@@ -17,3 +17,9 @@ When you click the __Bust your Boredom__ button, you will be presented with an a
 ![todo list](./assets/images/screenshots/todo-list.png)
 
 Navigate to the To Do page to see your list of activities. Click on the trash icon to remove your activity from the list when you've completed it.
+
+## Credits
+
+Bored API
+Google Books API
+Materialize CDN
