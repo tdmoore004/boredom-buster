@@ -9,6 +9,10 @@ $(document).ready(function (event) {
     let activityCost = document.getElementsByClassName('activityCost');
     let activityParticipants = document.getElementsByClassName('activityParticipants');
     $('.collapsible').addClass('hide');
+    let activityList = []
+    if (localStorage.getItem('activityList')) {
+        activityList = JSON.parse(localStorage.getItem('activityList'));
+    }
 
     // RETURN SELECTED VALUES FROM FORM AND CREATE URL
     // activity Type
@@ -165,13 +169,12 @@ $(document).ready(function (event) {
         // define the current activity
         let activityName = $("#activityResponse")[0].innerText;
         // get activity list from local storage
-        let activityList = JSON.parse(localStorage.getItem('activityList'));
-
+        // let activityList = JSON.parse(localStorage.getItem('activityList'));
         // If an activity is not displayed, do not add
         if ($('#activityResponse')[0].textContent === "") {
             M.toast({ html: 'No activity to add' });
             return;
-        } 
+        }
         // if the activity is already in the todo list, do not add
         else if (activityList.includes(activityName)) {
             M.toast({ html: 'Already added' });
